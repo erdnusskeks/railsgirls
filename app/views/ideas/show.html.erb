@@ -1,35 +1,31 @@
-<p id="notice"><%= notice %></p>
+<div class="row">
+  <div class="span7">
+    <%= image_tag(@idea.picture_url, :width => "80%") if @idea.picture.present? %>
+  </div>
 
-<p>
-  <b>Name:</b>
-  <%= @idea.name %>
-</p>
+  <div class="span5">
+    <p><b>Name: </b><%= @idea.name %></p>
+    <p><b>Description: </b><%= @idea.description %></p>
+    <p><b>Rating: </b><%= @idea.rating %></p>
+    <p>
+      <%= link_to 'Edit', edit_idea_path(@idea) %> |
+      <%= link_to 'Destroy', confirm: 'Are you sure?', method: :delete %> |
+      <%= link_to 'Back', idea_path %>
+    </p>
+  </div>
+</div>
 
-<p>
-  <b>Description:</b>
-  <%= @idea.description %>
-</p>
-
-<p>
-	<b>Rating:</b>
-	<%= @idea.rating %>
-</p>
-<p>
-  <b>Picture:</b>
-  <%= image_tag(@idea.picture_url, :width => 100) if @idea.picture.present? %>
-</p>
-
-<h3>Comments</h3>
+<!-- <div class="span6">
+ --><h3>Comments</h3>
 <% @comments.each do |comment| %>
   <div>
-    <strong><%= comment.user_name %></strong>
-    <br />
+    <p><b><%= comment.user_name %></b></p>
     <p><%= comment.body %></p>
-    <p><%= link_to 'Delete', comment_path(comment), method: :delete, data: { confirm: 'Are you sure?' } %></p>
+    <p>
+      <%= link_to 'Delete', comment_path(comment), method: :delete, data: { confirm: 'Are you sure?' } %>
+    </p>
   </div>
 <% end %>
 <%= render 'comments/form' %>
+<!-- </div> -->
 
-
-<%= link_to 'Edit', edit_idea_path(@idea) %> |
-<%= link_to 'Back', ideas_path %>

@@ -11,21 +11,24 @@
     </div>
   <% end %>
 
+
+
+
   <div class="field">
     <%= f.label :name %><br />
-    <%= f.text_field :name %>
+    <%= f.text_field :name, :size => "100" %>
   </div>
   <div class="field">
     <%= f.label :description %><br />
-    <%= f.text_area :description %>
+    <%= f.text_area :description, :size => "82x10" %>
   </div>
   <div class="field">
     <%= f.label :rating %><br />
-    <%= radio_button 'idea', 'rating', 1 %> 1<br />
-    <%= radio_button 'idea', 'rating', 2 %> 2<br />
-    <%= radio_button 'idea', 'rating', 3 %> 3<br />
-    <%= radio_button 'idea', 'rating', 4 %> 4<br />
-   </div> 
+    <%= radio_button 'idea', 'rating', 1 %> 1
+    <%= radio_button 'idea', 'rating', 2 %> 2
+    <%= radio_button 'idea', 'rating', 3 %> 3
+    <%= radio_button 'idea', 'rating', 4 %> 4
+   </div>
 
   <div class="field">
     <%= f.label :picture %><br />
